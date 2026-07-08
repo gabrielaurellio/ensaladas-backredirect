@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Espera! Una última condición — Ensaladas en Tarro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:   #22C55E;
+      --verde-d: #16A34A;
+      --fundo:   #060D08;
+      --fundo2:  #0A1710;
+      --fundo3:  #0D1F11;
+      --red:     #DC2626;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--fundo);
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .wrap { max-width: 580px; margin: 0 auto; padding: 0 22px; }
+
+    /* ══════════════════════════════════════
+       BARRA TOPO
+    ══════════════════════════════════════ */
+    .top-bar {
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .top-bar-inner { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .dot { width: 8px; height: 8px; background: #fff; border-radius: 50%; animation: blink 1.2s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.6)} }
+
+    /* ══════════════════════════════════════
+       SELECTOR ANIMADO
+    ══════════════════════════════════════ */
+    .selector-section {
+      background: linear-gradient(170deg, #0C1F10 0%, var(--fundo) 100%);
+      padding: 52px 22px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+    .selector-section::after {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(34,197,94,.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Fases */
+    .phase { display: none; }
+    .phase.active { display: block; }
+
+    /* ── Fase 1: Verificando ── */
+    .phase-1 { padding: 20px 0 32px; }
+    .phase-1 .p1-label {
+      font-size: 14px;
+      color: rgba(255,255,255,.45);
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .visitor-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      max-width: 320px;
+      margin: 0 auto 28px;
+    }
+    .v-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: background .15s, border-color .15s;
+    }
+    .v-dot.lit {
+      background: rgba(34,197,94,.35);
+      border-color: var(--verde);
+    }
+    .v-dot.you {
+      background: var(--verde) !important;
+      border-color: var(--verde) !important;
+      box-shadow: 0 0 12px rgba(34,197,94,.7);
+      animation: youPulse .8s ease-in-out infinite;
+    }
+    @keyframes youPulse {
+      0%,100%{ box-shadow: 0 0 12px rgba(34,197,94,.7); transform: scale(1); }
+      50%{ box-shadow: 0 0 24px rgba(34,197,94,1); transform: scale(1.25); }
+    }
+    .progress-wrap {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    .progress-bar {
+      background: rgba(255,255,255,.08);
+      border-radius: 100px;
+      height: 6px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--verde-d), var(--verde));
+      transition: width .03s linear;
+    }
+    .progress-text {
+      font-size: 12px;
+      color: rgba(255,255,255,.3);
+      font-weight: 600;
+    }
+
+    /* ── Fase 2: Contador ── */
+    .phase-2 { padding: 8px 0 32px; }
+    .p2-label {
+      font-size: 13px;
+      color: rgba(255,255,255,.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .slot-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .slot-num {
+      font-size: 96px;
+      font-weight: 900;
+      color: var(--verde);
+      line-height: 1;
+      letter-spacing: -4px;
+      min-width: 100px;
+      text-align: center;
+      filter: blur(0px);
+      transition: filter .1s;
+    }
+    .slot-num.spinning { filter: blur(3px); }
+    .slot-of {
+      font-size: 16px;
+      color: rgba(255,255,255,.35);
+      font-weight: 600;
+    }
+    .slot-of span { display: block; font-size: 28px; font-weight: 800; color: rgba(255,255,255,.2); }
+
+    /* ── Fase 3: Revelação ── */
+    .phase-3 { padding: 0 0 40px; position: relative; }
+
+    /* Confetti */
+    .confetti-piece {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      opacity: 0;
+      animation: confettiFall var(--dur) ease-out var(--delay) forwards;
+    }
+    @keyframes confettiFall {
+      0%   { opacity: 1; transform: translate(0,0) rotate(0deg) scale(1); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(.6); }
+    }
+
+    /* Badge revelação */
+    .reveal-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: revealPop .5s cubic-bezier(.34,1.56,.64,1) forwards;
+      opacity: 0;
+      margin-bottom: 20px;
+    }
+    @keyframes revealPop {
+      0%   { opacity: 0; transform: scale(.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .big-check {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--verde-d), var(--verde));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px;
+      box-shadow: 0 0 0 12px rgba(34,197,94,.12), 0 0 0 24px rgba(34,197,94,.06);
+      animation: ringPulse 2s ease-in-out infinite;
+    }
+    @keyframes ringPulse {
+      0%,100%{ box-shadow: 0 0 0 12px rgba(34,197,94,.12), 0 0 0 24px rgba(34,197,94,.06); }
+      50%{ box-shadow: 0 0 0 16px rgba(34,197,94,.18), 0 0 0 30px rgba(34,197,94,.08); }
+    }
+
+    .reveal-num {
+      font-size: 42px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+    .reveal-num em { font-style: normal; color: var(--verde); font-size: 56px; }
+    .reveal-of { font-size: 14px; color: rgba(255,255,255,.4); font-weight: 600; margin-top: -6px; }
+
+    /* Coupon */
+    .coupon-reveal {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #EAB308, #F59E0B);
+      border-radius: 14px;
+      padding: 14px 24px;
+      box-shadow: 0 8px 40px rgba(234,179,8,.35);
+      animation: couponDrop .5s cubic-bezier(.34,1.56,.64,1) .3s forwards;
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    @keyframes couponDrop {
+      0%  { opacity:0; transform:translateY(16px); }
+      100%{ opacity:1; transform:translateY(0); }
+    }
+    .coupon-reveal .c-left { text-align: left; }
+    .coupon-reveal .c-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(28,20,0,.6);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+    .coupon-reveal .c-amount {
+      font-size: 32px;
+      font-weight: 900;
+      color: #1C1400;
+      line-height: 1.1;
+    }
+    .coupon-reveal .c-sub {
+      font-size: 11px;
+      color: rgba(28,20,0,.55);
+      font-weight: 600;
+    }
+    .coupon-reveal .c-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(28,20,0,.15);
+      border-left: 2px dashed rgba(28,20,0,.2);
+    }
+    .coupon-reveal .c-right {
+      font-size: 28px;
+    }
+
+    /* ══════════════════════════════════════
+       HERO COPY (após animação)
+    ══════════════════════════════════════ */
+    .hero-copy {
+      background: linear-gradient(0deg, var(--fundo) 0%, transparent 100%);
+      padding: 36px 22px 48px;
+      text-align: center;
+    }
+    .hero-copy .chip {
+      display: inline-block;
+      border: 1.5px solid rgba(255,255,255,.12);
+      border-radius: 100px;
+      padding: 5px 16px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,.4);
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-copy .hook {
+      font-size: 13px;
+      color: rgba(255,255,255,.45);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .hero-copy h1 {
+      font-size: clamp(28px, 7vw, 46px);
+      font-weight: 900;
+      line-height: 1.13;
+      margin-bottom: 18px;
+    }
+    .hero-copy h1 em { font-style: normal; color: var(--verde); }
+    .hero-copy .sub {
+      font-size: 15px;
+      color: rgba(255,255,255,.5);
+      max-width: 440px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .hero-copy .sub strong { color: rgba(255,255,255,.85); }
+
+    /* ── Bloco de preço ── */
+    .price-block {
+      background: var(--fundo3);
+      border: 1px solid rgba(34,197,94,.2);
+      border-radius: 20px;
+      padding: 32px 28px;
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .price-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.3); margin-bottom: 6px; }
+    .price-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 4px; }
+    .p-old { font-size: 28px; font-weight: 700; color: rgba(255,255,255,.2); text-decoration: line-through; }
+    .arrow-badge { background: var(--red); color: #fff; font-size: 11px; font-weight: 800; border-radius: 100px; padding: 3px 10px; text-transform: uppercase; }
+    .p-new { font-size: 80px; font-weight: 900; color: var(--verde); line-height: 1; letter-spacing: -3px; margin-bottom: 6px; }
+    .p-new sup { font-size: 32px; vertical-align: super; letter-spacing: 0; }
+    .p-new sub { font-size: 32px; letter-spacing: 0; }
+    .p-save { display: inline-block; background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.25); color: var(--verde); font-size: 12.5px; font-weight: 700; border-radius: 8px; padding: 5px 14px; }
+
+    /* ══════════════════════════════════════
+       LISTA INCLUÍDA
+    ══════════════════════════════════════ */
+    .inc-section { background: var(--fundo); padding: 0 22px 8px; }
+    .upgrade-label { text-align: center; font-size: 12px; color: rgba(255,255,255,.3); margin: 28px 0 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; }
+    .inc-list { display: flex; flex-direction: column; gap: 8px; max-width: 480px; margin: 0 auto; }
+    .inc-row { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; padding: 13px 16px; }
+    .inc-ico { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .inc-txt strong { display: block; font-size: 13.5px; font-weight: 700; color: #fff; }
+    .inc-txt span { font-size: 12px; color: rgba(255,255,255,.38); }
+
+    /* ══════════════════════════════════════
+       CTA
+    ══════════════════════════════════════ */
+    .cta-section { padding: 28px 22px 44px; text-align: center; background: var(--fundo); }
+    .cta-note { font-size: 13px; color: rgba(255,255,255,.32); margin-bottom: 14px; }
+    .btn {
+      display: block;
+      background: linear-gradient(135deg, var(--verde-d), var(--verde));
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      text-decoration: none;
+      padding: 21px 24px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 14px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 36px rgba(34,197,94,.4);
+      animation: glow 2.2s ease-in-out infinite;
+    }
+    .btn::before { content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent); animation: shine 2.8s ease-in-out infinite; }
+    @keyframes shine { 0%{left:-120%} 100%{left:220%} }
+    @keyframes glow { 0%,100%{box-shadow:0 8px 36px rgba(34,197,94,.4)} 50%{box-shadow:0 8px 56px rgba(34,197,94,.65)} }
+    .btn small { display: block; font-size: 11.5px; font-weight: 500; opacity: .8; margin-top: 5px; }
+    .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 12px; }
+    .trust-item { font-size: 11.5px; color: rgba(255,255,255,.32); font-weight: 600; }
+
+    /* ══════════════════════════════════════
+       URGÊNCIA FINAL
+    ══════════════════════════════════════ */
+    .urg-section {
+      background: linear-gradient(155deg, #3B0A0A, #1C0707 80%);
+      border-top: 2px solid var(--red);
+      padding: 44px 22px;
+      text-align: center;
+    }
+    .urg-icon { font-size: 44px; margin-bottom: 14px; display: block; animation: tick 1.5s ease-in-out infinite; }
+    @keyframes tick { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+    .urg-section h2 { font-size: clamp(20px, 5vw, 28px); font-weight: 900; color: #FCA5A5; line-height: 1.25; margin-bottom: 12px; }
+    .urg-section p { font-size: 14px; color: rgba(255,255,255,.48); line-height: 1.75; max-width: 420px; margin: 0 auto 28px; }
+    .urg-section p strong { color: #FCA5A5; }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer { background: #030805; color: rgba(255,255,255,.2); text-align: center; padding: 24px 20px; font-size: 11px; line-height: 2; border-top: 1px solid rgba(255,255,255,.05); }
+  </style>
+</head>
+<body>
+
+<!-- BARRA TOPO -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="dot"></div>
+    ⚠️ Esta página aparece solo una vez — si cierras, la oferta desaparece para siempre
+    <div class="dot"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SELECTOR ANIMADO
+══════════════════════════════════════ -->
+<div class="selector-section" id="selectorSection">
+  <div class="wrap">
+
+    <!-- FASE 1: verificando -->
+    <div class="phase phase-1 active" id="phase1">
+      <p class="p1-label">Verificando elegibilidad entre visitantes...</p>
+      <div class="visitor-grid" id="visitorGrid"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Analizando... 0%</div>
+      </div>
+    </div>
+
+    <!-- FASE 2: contador -->
+    <div class="phase phase-2" id="phase2">
+      <p class="p2-label">Visitante seleccionado:</p>
+      <div class="slot-wrap">
+        <div class="slot-num" id="slotNum">--</div>
+        <div class="slot-of">de<span>50</span></div>
+      </div>
+    </div>
+
+    <!-- FASE 3: revelação -->
+    <div class="phase phase-3" id="phase3">
+      <div id="confettiContainer" style="position:absolute;top:50%;left:50%;pointer-events:none;"></div>
+
+      <div class="reveal-badge" id="revealBadge">
+        <div class="big-check">✓</div>
+        <div class="reveal-num"><em>1</em></div>
+        <div class="reveal-of">de 50 visitantes seleccionados</div>
+      </div>
+
+      <div class="coupon-reveal" id="couponReveal">
+        <div class="c-left">
+          <div class="c-label">Tu cupón activado</div>
+          <div class="c-amount">−$3.00</div>
+          <div class="c-sub">Descuento aplicado automáticamente</div>
+        </div>
+        <div class="c-divider"></div>
+        <div class="c-right">🎟️</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- HERO COPY -->
+<div class="hero-copy">
+  <div class="wrap">
+    <div class="chip">⏳ Solo en esta página · Condición única</div>
+    <p class="hook">Llegaste hasta aquí. No te vayas con las manos vacías.</p>
+    <h1>
+      Llévate el paquete completo<br>
+      por <em>menos de lo<br>que cuesta hoy.</em>
+    </h1>
+    <p class="sub">
+      Solo aquí: las <strong>60 recetas + todas las salsas + todos los bonos</strong>
+      al precio más bajo que jamás ofreceremos.<br>
+      <strong>Esta condición no vuelve a aparecer.</strong>
+    </p>
+
+    <div class="price-block">
+      <div class="price-label">Precio normal</div>
+      <div class="price-row">
+        <div class="p-old">$6.90</div>
+        <div class="arrow-badge">−43%</div>
+      </div>
+      <div class="p-new"><sup>$</sup>3<sub>.90</sub></div>
+      <div class="p-save">✓ Ahorras $3.00 — paquete completo, precio mínimo</div>
+    </div>
+  </div>
+</div>
+
+<!-- LISTA INCLUÍDA -->
+<div class="inc-section">
+  <div class="wrap">
+    <div class="upgrade-label">Todo esto incluido — sin recortes</div>
+    <div class="inc-list">
+      <div class="inc-row"><span class="inc-ico">🥗</span><div class="inc-txt"><strong>60 Recetas de Ensaladas en Tarro</strong><span>Con El Secreto de las Capas™ — fotos, macros e instrucciones</span></div></div>
+      <div class="inc-row"><span class="inc-ico">🫙</span><div class="inc-txt"><strong>Guía de +20 Salsas Caseras Exclusivas</strong><span>Duran 7 días · sin conservantes · hacen la diferencia</span></div></div>
+      <div class="inc-row"><span class="inc-ico">🎁</span><div class="inc-txt"><strong>Bonus: Smoothies Verdes Termogénicos</strong><span>15 recetas listas en menos de 3 minutos</span></div></div>
+      <div class="inc-row"><span class="inc-ico">🎁</span><div class="inc-txt"><strong>Bonus: Shots de Salud Matutinos</strong><span>10 shots de 60 segundos para potenciar tu energía</span></div></div>
+      <div class="inc-row"><span class="inc-ico">🎁</span><div class="inc-txt"><strong>Bonus: Aguas Detox Refrescantes</strong><span>10 aguas infusionadas para toda la semana</span></div></div>
+      <div class="inc-row"><span class="inc-ico">♾️</span><div class="inc-txt"><strong>Acceso de por vida</strong><span>Compras una vez y el contenido es tuyo para siempre</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="wrap">
+    <p class="cta-note">👇 Esta condición no vuelve a aparecer después de esta página</p>
+    <a href="LINK_HOTMART_3.90" class="btn">
+      ✅ QUIERO EL PAQUETE COMPLETO POR $3.90
+      <small>Acceso inmediato · Pago seguro</small>
+    </a>
+    <div class="trust-row">
+      <span class="trust-item">🔒 Pago seguro</span>
+      <span class="trust-item">⚡ Acceso inmediato</span>
+      <span class="trust-item">💳 Todas las tarjetas</span>
+    </div>
+  </div>
+</div>
+
+<!-- URGÊNCIA FINAL -->
+<div class="urg-section">
+  <div class="wrap">
+    <span class="urg-icon">⏳</span>
+    <h2>Si cierras esta página,<br>la oferta desaparece.<br>No hay vuelta atrás.</h2>
+    <p>
+      No aparecerá en la página principal.
+      No habrá cupón. No habrá $3.90.<br>
+      <strong>Esta es tu única oportunidad — y lo sabes.</strong>
+    </p>
+    <a href="LINK_HOTMART_3.90" class="btn" style="max-width:520px;display:block;margin:0 auto;">
+      ✅ APROVECHAR ANTES DE QUE DESAPAREZCA
+      <small>Solo $3.90 USD · Paquete completo</small>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>🥗 Ensaladas en Tarro + Salsas Caseras · Nutri Priscila Prates</p>
+  <p style="margin-top:6px;max-width:520px;margin-left:auto;margin-right:auto;">Este sitio no está afiliado a Facebook ni a ninguna entidad de Facebook. Los resultados varían según cada persona.</p>
+  <p style="margin-top:6px;">Copyright © 2026 · Todos los Derechos Reservados</p>
+</footer>
+
+<script>
+(function() {
+
+  /* ── Configuração ── */
+  const TOTAL_DOTS   = 50;
+  const PROGRESS_MS  = 1800;  // duração da fase 1
+  const SLOT_CYCLES  = 22;    // giros do contador
+  const SLOT_SPEED   = 55;    // ms por giro
+
+  /* ── Criar grade de pontos ── */
+  const grid = document.getElementById('visitorGrid');
+  const dots = [];
+  for (let i = 0; i < TOTAL_DOTS; i++) {
+    const d = document.createElement('div');
+    d.className = 'v-dot';
+    grid.appendChild(d);
+    dots.push(d);
+  }
+
+  /* ─────────────────────────────────────
+     FASE 1 — barra de progresso + dots
+  ───────────────────────────────────── */
+  const fill        = document.getElementById('progressFill');
+  const progText    = document.getElementById('progressText');
+  let pct           = 0;
+  let dotIndex      = 0;
+  const DOT_STEP    = TOTAL_DOTS / 100;
+
+  const p1Interval = setInterval(() => {
+    pct++;
+    fill.style.width = pct + '%';
+    progText.textContent = 'Analizando... ' + pct + '%';
+
+    // acender dots progressivamente
+    const target = Math.floor(pct * DOT_STEP);
+    while (dotIndex < target && dotIndex < TOTAL_DOTS - 1) {
+      dots[dotIndex].classList.add('lit');
+      dotIndex++;
+    }
+
+    if (pct >= 100) {
+      clearInterval(p1Interval);
+      // acende o dot "você" (último)
+      dots[TOTAL_DOTS - 1].classList.add('you');
+
+      setTimeout(startPhase2, 600);
+    }
+  }, PROGRESS_MS / 100);
+
+  /* ─────────────────────────────────────
+     FASE 2 — slot machine
+  ───────────────────────────────────── */
+  function startPhase2() {
+    document.getElementById('phase1').classList.remove('active');
+    document.getElementById('phase2').classList.add('active');
+
+    const slot   = document.getElementById('slotNum');
+    let   cycles = 0;
+    let   speed  = SLOT_SPEED;
+
+    slot.classList.add('spinning');
+
+    const spinInterval = setInterval(() => {
+      // número aleatório excluindo 1 (o resultado final)
+      const rnd = Math.floor(Math.random() * 49) + 2;
+      slot.textContent = rnd;
+      cycles++;
+
+      // desacelerar perto do fim
+      if (cycles > SLOT_CYCLES - 6) {
+        speed += 18;
+        clearInterval(spinInterval);
+        slowSpin(slot, speed, SLOT_CYCLES - cycles);
+      }
+    }, speed);
+  }
+
+  function slowSpin(slot, speed, remaining) {
+    if (remaining <= 0) {
+      slot.classList.remove('spinning');
+      slot.textContent = '1';
+      slot.style.color = '#22C55E';
+      setTimeout(startPhase3, 400);
+      return;
+    }
+    setTimeout(() => {
+      const rnd = Math.floor(Math.random() * 49) + 2;
+      slot.textContent = rnd;
+      slowSpin(slot, speed + 22, remaining - 1);
+    }, speed);
+  }
+
+  /* ─────────────────────────────────────
+     FASE 3 — revelação + confetti
+  ───────────────────────────────────── */
+  function startPhase3() {
+    document.getElementById('phase2').classList.remove('active');
+    document.getElementById('phase3').classList.add('active');
+
+    document.getElementById('revealBadge').style.animationPlayState = 'running';
+    document.getElementById('couponReveal').style.animationPlayState = 'running';
+
+    launchConfetti();
+  }
+
+  function launchConfetti() {
+    const container = document.getElementById('confettiContainer');
+    const colors    = ['#22C55E','#EAB308','#fff','#16A34A','#FDE047','#86EFAC'];
+    const count     = 60;
+
+    for (let i = 0; i < count; i++) {
+      const p     = document.createElement('div');
+      p.className = 'confetti-piece';
+
+      const angle = (Math.random() * 360) * (Math.PI / 180);
+      const dist  = 80 + Math.random() * 140;
+      const tx    = Math.cos(angle) * dist;
+      const ty    = Math.sin(angle) * dist - 40;
+      const rot   = Math.random() * 720 - 360;
+      const dur   = (.6 + Math.random() * .8) + 's';
+      const delay = (Math.random() * .25) + 's';
+      const size  = 6 + Math.random() * 8;
+
+      p.style.cssText = `
+        width:${size}px; height:${size}px;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        --tx:${tx}px; --ty:${ty}px; --rot:${rot}deg;
+        --dur:${dur}; --delay:${delay};
+        margin-left:-${size/2}px; margin-top:-${size/2}px;
+        border-radius: ${Math.random() > .5 ? '50%' : '2px'};
+      `;
+      container.appendChild(p);
+    }
+  }
+
+})();
+</script>
+
+</body>
+</html>

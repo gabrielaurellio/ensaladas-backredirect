@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Ensaladas en Tarro + Salsas Caseras | El Secreto de las Capas™</title>
+  <meta name="description" content="60 recetas de ensaladas frescas para toda la semana. Prepara todo en 30 minutos el domingo. Acceso inmediato por $9,90 USD.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:     #16A34A;
+      --verde-hd:  #15803D;
+      --verde-lt:  #DCFCE7;
+      --verde-xlt: #F0FDF4;
+      --preto:     #111827;
+      --cinza:     #374151;
+      --cinza-lt:  #6B7280;
+      --borda:     #E5E7EB;
+      --creme:     #F9FAFB;
+      --branco:    #FFFFFF;
+      --vermelho:  #DC2626;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--branco);
+      color: var(--preto);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { padding: 48px 0; }
+    section.alt { background: var(--creme); }
+    section.verde-lt { background: var(--verde-xlt); }
+
+    img { display: block; width: 100%; height: auto; }
+
+    /* ── LOGO ── */
+    .logo-bar {
+      background: var(--branco);
+      border-bottom: 1px solid var(--borda);
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .logo-bar .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--verde-hd);
+      letter-spacing: -.3px;
+    }
+    .logo-bar .logo span { color: var(--preto); }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 40px 0 0;
+      text-align: center;
+    }
+    #hero .wrap { padding-bottom: 0; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--verde-lt);
+      color: var(--verde-hd);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    #hero h1 {
+      font-size: clamp(26px, 7vw, 40px);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--preto);
+      margin-bottom: 16px;
+    }
+    #hero h1 em {
+      font-style: normal;
+      color: var(--vermelho);
+    }
+    #hero h2 {
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 500;
+      color: var(--cinza);
+      line-height: 1.5;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #hero h2 strong { color: var(--preto); font-weight: 700; }
+    .hero-img {
+      margin-top: 32px;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--verde);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      padding: 18px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: .3px;
+      transition: background .2s, transform .15s;
+      box-shadow: 0 6px 24px rgba(22,163,74,.35);
+    }
+    .btn:hover { background: var(--verde-hd); transform: translateY(-2px); }
+    .btn small {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: .85;
+      margin-top: 4px;
+    }
+    .btn-wrap { text-align: center; padding: 12px 20px; }
+
+    /* ── PROVA SOCIAL ── */
+    #proof { background: var(--preto); color: #fff; }
+    #proof h2 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    #proof h2 em { font-style: normal; color: var(--verde); }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .proof-grid img {
+      border-radius: 12px;
+    }
+
+    /* ── RUMINAÇÃO ── */
+    #ruminacao { background: var(--creme); }
+    #ruminacao .sec-lead {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cinza-lt);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    #ruminacao h2 {
+      font-size: clamp(22px, 6vw, 32px);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    #ruminacao .sub {
+      text-align: center;
+      color: var(--cinza);
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+    .rum-card {
+      background: #1a1a2e;
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .rum-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,.06);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border-left: 3px solid #EF4444;
+    }
+    .rum-item .ri { font-size: 20px; flex-shrink: 0; line-height: 1.4; }
+    .rum-item p { color: rgba(255,255,255,.88); font-size: 14px; line-height: 1.5; }
+
+    /* ── AGITAÇÃO ── */
+    #agitacao { text-align: center; }
+    #agitacao img.ag-img {
+      border-radius: 16px;
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #agitacao h2 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    #agitacao p {
+      color: var(--cinza);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── PERGUNTA DECISIVA ── */
+    #pergunta { background: var(--verde-xlt); text-align: center; }
+    #pergunta .pq-pre {
+      font-size: 15px;
+      color: var(--cinza-lt);
+      margin-bottom: 12px;
+    }
+    #pergunta h2 {
+      font-size: clamp(20px, 5.5vw, 30px);
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 24px;
+      color: var(--preto);
+    }
+    #pergunta h2 strong { color: var(--verde-hd); }
+    #pergunta .resp {
+      font-size: clamp(18px, 5vw, 26px);
+      font-weight: 900;
+      color: var(--verde-hd);
+      background: var(--verde-lt);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin-bottom: 0;
+    }
+
+    /* ── BENEFÍCIOS ── */
+    #beneficios { text-align: center; }
+    #beneficios h2 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    #beneficios h2 em { font-style: normal; color: var(--verde); }
+    .ben-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+    .ben-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--verde-xlt);
+      border-radius: 12px;
+      padding: 16px 18px;
+      border: 1px solid var(--verde-lt);
+    }
+    .ben-icon {
+      width: 36px; height: 36px;
+      background: var(--verde);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+    .ben-item p { font-size: 15px; font-weight: 600; color: var(--preto); padding-top: 6px; }
+
+    /* ── ENTREGÁVEIS ── */
+    #entregaveis { background: var(--creme); }
+    .sec-title {
+      font-size: clamp(22px, 6vw, 32px);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .sec-sub {
+      text-align: center;
+      color: var(--cinza);
+      font-size: 15px;
+      margin-bottom: 36px;
+    }
+    .entreg-item {
+      margin-bottom: 44px;
+    }
+    .entreg-item:last-child { margin-bottom: 0; }
+    .entreg-item img {
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.10);
+    }
+    .entreg-item h3 {
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .entreg-item h3 em { font-style: normal; color: var(--verde); }
+    .entreg-item p { color: var(--cinza); font-size: 15px; line-height: 1.65; }
+
+    /* ── AINDA NÃO ACABOU ── */
+    #aun {
+      background: var(--preto);
+      color: #fff;
+      text-align: center;
+      padding: 36px 20px;
+    }
+    #aun h2 {
+      font-size: clamp(20px, 6vw, 28px);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    #aun p { color: rgba(255,255,255,.7); font-size: 16px; }
+
+    /* ── BONUS ── */
+    #bonus { }
+    .bonus-item {
+      margin-bottom: 44px;
+    }
+    .bonus-item:last-child { margin-bottom: 0; }
+    .bonus-badge {
+      display: inline-block;
+      background: var(--verde);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+    .bonus-item img {
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.10);
+    }
+    .bonus-item h3 {
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .bonus-item p { color: var(--cinza); font-size: 15px; line-height: 1.65; }
+
+    /* ── PARA QUIÉN ES ── */
+    #paraquien { background: var(--creme); }
+    #paraquien h2 {
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    #paraquien h2 em { font-style: normal; color: var(--verde); }
+    .pq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .pq-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--cinza);
+      line-height: 1.55;
+      padding: 14px 16px;
+      background: var(--branco);
+      border-radius: 10px;
+      border: 1px solid var(--borda);
+    }
+    .pq-item .ck { font-size: 18px; flex-shrink: 0; }
+    .pq-conclusion {
+      background: var(--verde);
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ── RECAPITULANDO ── */
+    #recap { text-align: center; }
+    #recap h2 {
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    #recap .sub { color: var(--cinza); margin-bottom: 28px; font-size: 15px; }
+    .recap-table {
+      background: var(--branco);
+      border: 2px solid var(--borda);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .recap-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--borda);
+      font-size: 15px;
+    }
+    .recap-row:last-child { border-bottom: none; }
+    .recap-row .name { text-align: left; font-weight: 600; color: var(--preto); display: flex; align-items: center; gap: 8px; }
+    .recap-row .val { font-weight: 700; color: var(--cinza-lt); text-decoration: line-through; white-space: nowrap; }
+    .recap-row.bonus .name { color: var(--verde-hd); }
+    .recap-total {
+      background: var(--creme);
+      border: 2px solid var(--borda);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .recap-total .t-label { font-size: 14px; color: var(--cinza-lt); margin-bottom: 4px; }
+    .recap-total .t-orig { font-size: 18px; font-weight: 700; color: var(--cinza-lt); text-decoration: line-through; margin-bottom: 4px; }
+    .recap-total .t-hoje { font-size: 13px; color: var(--cinza); margin-bottom: 8px; }
+    .recap-total .t-price {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--verde-hd);
+      line-height: 1;
+    }
+    .recap-total .t-price sup { font-size: 20px; vertical-align: super; }
+    .recap-total .t-sub { font-size: 13px; color: var(--cinza-lt); margin-top: 6px; }
+
+    /* ── OFERTA SECTION ── */
+    #oferta { background: var(--creme); text-align: center; }
+    #oferta h2 {
+      font-size: clamp(18px, 5vw, 26px);
+      font-weight: 900;
+      margin-bottom: 24px;
+      line-height: 1.35;
+    }
+    #oferta .bundle-img {
+      border-radius: 16px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.12);
+    }
+
+    /* ── PRICE BOX ── */
+    .price-box {
+      background: var(--branco);
+      border: 2px solid var(--verde-lt);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .price-box .pb-orig {
+      font-size: 14px;
+      color: var(--cinza-lt);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .price-box .pb-price {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--verde-hd);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .price-box .pb-price sup { font-size: 24px; vertical-align: super; }
+    .price-box .pb-price sub { font-size: 18px; }
+    .price-box .pb-note {
+      font-size: 13px;
+      color: var(--cinza-lt);
+    }
+
+    /* ── TRUST BADGES ── */
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 0 0;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--cinza-lt);
+      font-weight: 600;
+    }
+    .trust-badge .icon { font-size: 16px; }
+
+    /* ── COMO FUNCIONA ── */
+    #como { text-align: center; }
+    #como h2 { font-size: clamp(20px, 5vw, 28px); font-weight: 900; margin-bottom: 28px; }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .step {
+      background: var(--creme);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .step-num {
+      width: 44px; height: 44px;
+      background: var(--verde);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      margin: 0 auto 14px;
+    }
+    .step h4 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+    .step p { font-size: 14px; color: var(--cinza); }
+
+    /* ── AUTORIDADE ── */
+    #autoridade { background: var(--creme); text-align: center; }
+    #autoridade img.nutri-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 4px solid var(--verde-lt);
+    }
+    #autoridade h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    #autoridade .nutri-tag {
+      font-size: 13px;
+      color: var(--verde-hd);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    #autoridade p {
+      color: var(--cinza);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── DUAS OPÇÕES ── */
+    #opcoes { }
+    #opcoes h2 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+    .opcoes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .opcao {
+      border-radius: 14px;
+      padding: 20px 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .opcao-1 {
+      background: #FEF2F2;
+      border: 1.5px solid #FECACA;
+    }
+    .opcao-2 {
+      background: var(--verde-xlt);
+      border: 1.5px solid var(--verde-lt);
+    }
+    .opcao h4 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .opcao-1 h4 { color: #991B1B; }
+    .opcao-2 h4 { color: var(--verde-hd); }
+    .opcao ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .opcao ul li { display: flex; gap: 7px; align-items: flex-start; }
+    .opcao-1 ul li::before { content: "👎"; font-size: 13px; flex-shrink: 0; }
+    .opcao-2 ul li::before { content: "✅"; font-size: 13px; flex-shrink: 0; }
+    .opcao ul li span { font-size: 13px; color: var(--cinza); }
+    .opcoes-conclusion {
+      background: var(--preto);
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .opcoes-conclusion em { font-style: normal; color: var(--verde); }
+
+    /* ── FAQ ── */
+    #faq { background: var(--creme); }
+    #faq h2 { font-size: clamp(20px, 5vw, 26px); font-weight: 900; text-align: center; margin-bottom: 24px; }
+    .faq-item {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .faq-item:last-child { margin-bottom: 0; }
+    .faq-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--preto); }
+    .faq-item p { font-size: 14px; color: var(--cinza); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--preto);
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+
+    /* ── STICKY CTA (mobile) ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--branco);
+      border-top: 1px solid var(--borda);
+      padding: 12px 20px;
+      z-index: 999;
+      display: none;
+    }
+    .sticky-cta .btn { font-size: 16px; padding: 16px 24px; }
+    @media (max-width: 640px) { .sticky-cta { display: block; } }
+
+    /* ── PROOF GRID 2 cols on bigger mobile ── */
+    @media (min-width: 480px) {
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 48px; height: 4px;
+      background: var(--verde);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    /* ── PROOF SECTION 2 (full width) ── */
+    .proof-full img { border-radius: 12px; margin-bottom: 12px; }
+    .proof-full img:last-child { margin-bottom: 0; }
+
+  </style>
+</head>
+<body>
+
+<!-- ════ LOGO ════ -->
+<div class="logo-bar">
+  <div class="logo">
+    🥗 <span>Ensaladas en Tarro</span> + Salsas Caseras
+  </div>
+</div>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-tag">⚡ +4.200 mujeres ya cambiaron su semana</div>
+    <h1>¿Cansada de tirar verduras a la basura <em>todos los viernes</em>?</h1>
+    <h2>Copia mis 60 recetas de Ensaladas en Tarro con <strong>El Secreto de las Capas™</strong> y come saludable todos los días — preparando todo en solo <strong>30 minutos el domingo</strong>.</h2>
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn">
+      ✅ QUIERO MIS ENSALADAS AHORA
+      <small>Acceso inmediato · Solo $9,90 USD</small>
+    </a>
+  </div>
+  <div class="wrap">
+    <div class="hero-img">
+      <img src="mockup-produto.png" alt="Ensaladas en Tarro - 60 recetas completas" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROVA SOCIAL EARLY ════ -->
+<section id="proof">
+  <div class="wrap">
+    <h2>Mira los resultados reales de quienes ya usan las <em>Ensaladas en Tarro</em></h2>
+    <div class="proof-grid">
+      <img src="depoimento-01-es.png" alt="Testimonio 1" loading="lazy">
+      <img src="depoimento-02-es.png" alt="Testimonio 2" loading="lazy">
+      <img src="depoimento-03-es.png" alt="Testimonio 3" loading="lazy">
+      <img src="depoimento-04-es.png" alt="Testimonio 4" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ════ RUMINAÇÃO ════ -->
+<section id="ruminacao">
+  <div class="wrap">
+    <p class="sec-lead">Dime la verdad...</p>
+    <h2>Quieres comer sano, pero siempre terminas <em style="color:var(--vermelho);">sin hacerlo</em>, ¿verdad?</h2>
+    <p class="sub">Por eso, cada vez que intentas organizarte, piensas:</p>
+    <div class="rum-card">
+      <div class="rum-item">
+        <span class="ri">😔</span>
+        <p><strong>"Compro verduras con buenas intenciones... y el viernes ya están amarillas en el fondo del refrigerador"</strong></p>
+      </div>
+      <div class="rum-item">
+        <span class="ri">😩</span>
+        <p><strong>"Quiero comer ensalada pero en 2 horas ya está toda marchita y fea"</strong></p>
+      </div>
+      <div class="rum-item">
+        <span class="ri">😤</span>
+        <p><strong>"Al llegar cansada del trabajo, el delivery siempre gana — aunque quería comer sano"</strong></p>
+      </div>
+      <div class="rum-item">
+        <span class="ri">😰</span>
+        <p><strong>"No tengo tiempo de cocinar algo fresco cada noche para mí y para mi familia"</strong></p>
+      </div>
+      <div class="rum-item">
+        <span class="ri">😠</span>
+        <p><strong>"Gasto una fortuna en verduras que termino tirando a la basura cada semana"</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ AGITAÇÃO ════ -->
+<section id="agitacao">
+  <div class="wrap">
+    <h2>Esto no es falta de voluntad.<br>Es falta de <em style="color:var(--verde);">método.</em></h2>
+    <p>Nadie te enseñó cómo preparar ensaladas que duran toda la semana, frescas y deliciosas. Eso cambia hoy.</p>
+  </div>
+</section>
+
+<!-- ════ PERGUNTA DECISIVA ════ -->
+<section id="pergunta">
+  <div class="wrap">
+    <p class="pq-pre">Ahora te pregunto...</p>
+    <h2>Si pudieras tener <strong>60 ensaladas frescas</strong> listas para toda la semana, preparando todo en apenas <strong>30 minutos el domingo</strong>... ¿eso cambiaría tu semana?</h2>
+    <p class="resp">Si tu respuesta es <strong>SÍ</strong>, las <strong>Ensaladas en Tarro + Salsas Caseras</strong> fueron creadas exactamente para ti.</p>
+  </div>
+</section>
+
+<!-- ════ BENEFÍCIOS ════ -->
+<section id="beneficios">
+  <div class="wrap">
+    <div class="divider"></div>
+    <h2>Con las <em>Ensaladas en Tarro</em> vas a:</h2>
+    <div class="ben-list">
+      <div class="ben-item">
+        <div class="ben-icon">🥗</div>
+        <p>Comer sano todos los días sin cocinar cada noche</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-icon">📋</div>
+        <p>Tener 60 recetas completas con su salsa exclusiva incluida</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-icon">⏱️</div>
+        <p>Preparar toda la semana en solo 30 minutos el domingo</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-icon">✨</div>
+        <p>Conservar tus ensaladas frescas hasta 7 días en el refrigerador</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-icon">💰</div>
+        <p>Ahorrar dinero dejando de tirar verduras a la basura</p>
+      </div>
+      <div class="ben-item">
+        <div class="ben-icon">📱</div>
+        <p>Acceder a todo desde tu celular, tablet o computadora — sin app</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ENTREGÁVEIS ════ -->
+<section id="entregaveis" class="alt">
+  <div class="wrap">
+    <h2 class="sec-title">Mira todo lo que vas a recibir</h2>
+    <p class="sec-sub">Acceso inmediato a todos los materiales</p>
+
+    <div class="entreg-item">
+      <img src="mockup-produto.png" alt="60 Recetas de Ensaladas en Tarro" loading="lazy">
+      <h3><em>60 Recetas de Ensaladas en Tarro</em></h3>
+      <p>El método completo con El Secreto de las Capas™. Cada receta viene con fotos del paso a paso, información nutricional completa y tiempo de preparación. Todas diseñadas para durar hasta 7 días frescas en el refrigerador.</p>
+    </div>
+
+    <div class="entreg-item">
+      <img src="mockup-saladas-es.png" alt="Guía de Salsas Caseras" loading="lazy">
+      <h3>Guía de <em>+20 Salsas Caseras</em> Exclusivas</h3>
+      <p>La salsa correcta transforma cualquier ensalada. Recibe más de 20 recetas de aderezos caseros con ingredientes simples, que duran hasta 7 días guardados por separado — el secreto que hace que tus ensaladas sean irresistibles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ MAIS PROVAS ════ -->
+<section id="proof2" style="background:#111827; padding: 48px 0;">
+  <div class="wrap">
+    <h2 style="color:#fff; font-size:clamp(18px,5vw,26px); font-weight:900; text-align:center; margin-bottom:24px; line-height:1.3;">
+      Más mujeres que ya transformaron su semana 👇
+    </h2>
+    <div class="proof-full">
+      <img src="depoimento-05-es.png" alt="Testimonio 5" loading="lazy">
+      <img src="depoimento-06-es.png" alt="Testimonio 6" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ════ AÚN NO TERMINA ════ -->
+<section id="aun">
+  <div class="wrap">
+    <h2>¡AÚN NO TERMINA!</h2>
+    <p>También vas a recibir estos 3 bonus exclusivos:</p>
+  </div>
+</section>
+
+<!-- ════ BONUS ════ -->
+<section id="bonus">
+  <div class="wrap">
+    <div class="bonus-item">
+      <span class="bonus-badge">🎁 Bonus #1</span>
+      <h3><em>Smoothies Verdes</em> Termogénicos</h3>
+      <p>15 recetas de smoothies verdes para empezar el día con energía y acelerar tu metabolismo. Preparados en menos de 3 minutos cada uno — sin blender especial.</p>
+    </div>
+
+    <div class="bonus-item">
+      <span class="bonus-badge">🎁 Bonus #2</span>
+      <h3><em>Shots de Salud</em> Matutinos</h3>
+      <p>10 shots poderosos para potenciar tu salud en 60 segundos. Antiinflamatorios, digestivos y energizantes. La rutina matutina que miles de mujeres ya adoptaron.</p>
+    </div>
+
+    <div class="bonus-item">
+      <span class="bonus-badge">🎁 Bonus #3</span>
+      <h3><em>Aguas Detox</em> Refrescantes</h3>
+      <p>10 recetas de aguas detox infusionadas para hidratarte con sabor durante toda la semana. Hermosas, deliciosas y que cuidan tu cuerpo desde adentro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PARA QUIÉN ES ════ -->
+<section id="paraquien" class="alt">
+  <div class="wrap">
+    <h2>Las <em>Ensaladas en Tarro</em> son para ti que:</h2>
+    <div class="pq-list">
+      <div class="pq-item"><span class="ck">✅</span><span>Compras verduras con buenas intenciones y terminas tirándolas cada semana</span></div>
+      <div class="pq-item"><span class="ck">✅</span><span>Quieres comer sano pero no tienes tiempo de cocinar algo fresco cada noche</span></div>
+      <div class="pq-item"><span class="ck">✅</span><span>Siempre terminas pidiendo delivery porque no tienes nada preparado</span></div>
+      <div class="pq-item"><span class="ck">✅</span><span>Gastas dinero en comida sin comer bien de verdad</span></div>
+      <div class="pq-item"><span class="ck">✅</span><span>Quieres bajar de peso pero la dieta siempre cae el miércoles</span></div>
+      <div class="pq-item"><span class="ck">✅</span><span>Quieres que tu familia coma bien sin pasar horas en la cocina</span></div>
+    </div>
+    <div class="pq-conclusion">
+      Si marcaste 2 o más puntos — este método fue creado exactamente para ti. 🥗
+    </div>
+  </div>
+</section>
+
+<!-- ════ RECAPITULANDO ════ -->
+<section id="recap">
+  <div class="wrap">
+    <div class="divider"></div>
+    <h2>RECAPITULANDO...</h2>
+    <p class="sub">Mira todo lo que vas a recibir con las Ensaladas en Tarro</p>
+
+    <div class="recap-table">
+      <div class="recap-row">
+        <span class="name">🥗 60 Recetas de Ensaladas en Tarro</span>
+        <span class="val">$47,00</span>
+      </div>
+      <div class="recap-row">
+        <span class="name">🫙 Guía de +20 Salsas Caseras</span>
+        <span class="val">$27,00</span>
+      </div>
+      <div class="recap-row bonus">
+        <span class="name">🟢 Bonus: Smoothies Verdes</span>
+        <span class="val">$17,00</span>
+      </div>
+      <div class="recap-row bonus">
+        <span class="name">🟢 Bonus: Shots de Salud</span>
+        <span class="val">$17,00</span>
+      </div>
+      <div class="recap-row bonus">
+        <span class="name">🟢 Bonus: Aguas Detox</span>
+        <span class="val">$17,00</span>
+      </div>
+    </div>
+
+    <div class="recap-total">
+      <div class="t-label">Tudo isso devería costar:</div>
+      <div class="t-orig">$125,00</div>
+      <div class="t-hoje">Pero hoy, tienes acceso a todo por apenas:</div>
+      <div class="t-price"><sup>$</sup>9<sub>,90</sub></div>
+      <div class="t-sub">USD · Pago único · Acceso de por vida</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ OFERTA FINAL ════ -->
+<section id="oferta" class="alt">
+  <div class="wrap">
+    <h2>Entonces, toca el botón abajo y recibe tu acceso ahora mismo</h2>
+
+    <img class="bundle-img" src="mockup-saladas-es.png" alt="Ensaladas en Tarro - Tudo que você recebe" loading="lazy">
+
+    <div class="logo-bar" style="border:none; background:transparent; margin-bottom:16px;">
+      <div class="logo">🥗 <span>Ensaladas en Tarro</span> + Salsas Caseras</div>
+    </div>
+
+    <div class="price-box">
+      <div class="pb-orig">De $125,00</div>
+      <div class="pb-price"><sup>$</sup>9<sub>,90 USD</sub></div>
+      <div class="pb-note">Pago único · Acceso inmediato · Acceso de por vida</div>
+    </div>
+
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn">
+      ✅ QUIERO MIS ENSALADAS AHORA
+      <small>Haz clic aquí y recibe el acceso en tu email</small>
+    </a>
+
+    <div class="trust">
+      <div class="trust-badge"><span class="icon">🔒</span> Pago 100% seguro</div>
+      <div class="trust-badge"><span class="icon">⚡</span> Acceso inmediato</div>
+      <div class="trust-badge"><span class="icon">🛡️</span> Garantía 7 días</div>
+      <div class="trust-badge"><span class="icon">💳</span> Todas las tarjetas</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ COMO FUNCIONA ════ -->
+<section id="como">
+  <div class="wrap">
+    <h2>Compra ahora y recibe tu acceso en el email ¡inmediatamente!</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Haz tu compra</h4>
+        <p>Pago 100% seguro. Todas las tarjetas y PIX aceptados.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Recibe en tu email</h4>
+        <p>En minutos recibirás el acceso completo en tu correo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>¡Todo listo!</h4>
+        <p>Prepara tus ensaladas este domingo y come sano toda la semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ AUTORIDADE ════ -->
+<section id="autoridade" class="alt">
+  <div class="wrap">
+    <img class="nutri-img" src="priscila-prates.jpg" alt="Nutri Priscila Prates" loading="lazy">
+    <h3>Nutri Priscila Prates</h3>
+    <p class="nutri-tag">Creadora de las Ensaladas en Tarro + El Secreto de las Capas™</p>
+    <p>Nutricionista certificada, especialista en alimentación práctica para familias latinoamericanas. Desarrolló El Secreto de las Capas™ después de años ayudando a mujeres a comer bien sin complicaciones ni horas en la cocina. Hoy, más de 4.200 mujeres en todo LATAM ya usan su método.</p>
+  </div>
+</section>
+
+<!-- ════ DUAS OPÇÕES ════ -->
+<section id="opcoes">
+  <div class="wrap">
+    <h2>Ahora, tienes dos opciones</h2>
+    <div class="opcoes-grid">
+      <div class="opcao opcao-1">
+        <h4>❌ Sin las Ensaladas en Tarro</h4>
+        <ul>
+          <li><span>Seguir tirando verduras a la basura</span></li>
+          <li><span>Continuar pidiendo delivery cuando querías comer sano</span></li>
+          <li><span>Gastar más y comer peor cada semana</span></li>
+          <li><span>La dieta sana que nunca llega</span></li>
+        </ul>
+      </div>
+      <div class="opcao opcao-2">
+        <h4>✅ Con las Ensaladas en Tarro</h4>
+        <ul>
+          <li><span>60 recetas frescas para toda la semana</span></li>
+          <li><span>30 minutos el domingo, listo para 7 días</span></li>
+          <li><span>Ahorrar dinero y comer mejor</span></li>
+          <li><span>Ensaladas que duran frescas hasta 7 días</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="opcoes-conclusion">
+      Yo sé, y tú también sabes: <em>la opción 2 es la más inteligente.</em><br>
+      Entonces toca el botón abajo y consigue tu acceso ahora mismo.
+    </div>
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn">
+      ✅ QUIERO MIS ENSALADAS AHORA
+      <small>Solo $9,90 USD · Acceso inmediato</small>
+    </a>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <h4>¿Cómo voy a acceder al material?</h4>
+      <p>Inmediatamente después de la compra, recibirás un email con el enlace de acceso completo. Todo disponible desde tu celular, tablet o computadora.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Funciona para mi país?</h4>
+      <p>Sí. El material está disponible para todo el mundo hispanohablante — México, Colombia, Argentina, Chile, Perú, Venezuela, Ecuador y todos los demás países de LATAM.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿El material está en español?</h4>
+      <p>Sí, 100% en español neutro. Cualquier persona en LATAM puede entenderlo perfectamente.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Cómo puedo pagar?</h4>
+      <p>Aceptamos todas las tarjetas de crédito y débito internacionales, además de PIX para Brasil. El pago es procesado por Hotmart, plataforma 100% segura.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Tiene garantía?</h4>
+      <p>Sí. Tienes 7 días de garantía total. Si no estás satisfecha, te devolvemos el 100% de tu dinero — sin preguntas.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Necesito saber cocinar?</h4>
+      <p>No. Las recetas son paso a paso, con fotos y explicaciones simples. Cualquier persona puede seguirlas aunque nunca haya cocinado una ensalada en tarro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <p style="margin-bottom:8px;">🥗 <strong style="color:rgba(255,255,255,.8);">Ensaladas en Tarro + Salsas Caseras</strong></p>
+  <p>Este sitio no está afiliado a Facebook ni a ninguna entidad de Facebook. Después de salir de Facebook, la responsabilidad no es de ellos sino de nuestro sitio. La compra de este material no garantiza ningún tipo de resultado. Hacemos todos los esfuerzos para mostrar claramente todas las pruebas del producto y usamos resultados reales de clientes.</p>
+  <p style="margin-top:12px;">Copyright © 2026 · Todos los Derechos Reservados.</p>
+</footer>
+
+<!-- ════ STICKY CTA ════ -->
+<div class="sticky-cta">
+  <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn">
+    ✅ QUIERO MIS ENSALADAS — $9,90
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Saladas no Pote + Molhos Irresistíveis – Priscila Prates</title>
+  <meta name="description" content="60 receitas de saladas no pote com molhos irresistíveis. Monte com antecedência, conserve por até 7 dias. Acesso imediato com garantia de 7 dias." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1a7a3c;
+      --green-light: #22a650;
+      --green-bg: #f0faf4;
+      --green-border: #b6e9cb;
+      --yellow: #f5c800;
+      --yellow-dark: #d4a900;
+      --red: #e53935;
+      --text: #1a1a1a;
+      --text-secondary: #444;
+      --gray-bg: #f7f7f7;
+      --white: #ffffff;
+      --border: #e0e0e0;
+      --max: 620px;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    * { box-sizing: border-box; }
+
+    section { padding: 52px 0; }
+    section + section { padding-top: 0; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── HEADER BAR ── */
+    .top-bar {
+      background: var(--green);
+      padding: 12px 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--green-bg);
+      padding: 52px 0 0;
+      border-bottom: 2px solid var(--green-border);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 7vw, 42px);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero h2 {
+      font-size: clamp(16px, 4vw, 19px);
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .hero-img {
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn-cta {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #27c45e, #1a7a3c);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 900;
+      padding: 22px 32px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(26,122,60,.4);
+      transition: transform .15s, box-shadow .15s;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(26,122,60,.5); }
+    .btn-cta small { display: block; font-size: 13px; font-weight: 500; opacity: .9; margin-top: 5px; text-transform: none; letter-spacing: 0; }
+
+    .btn-wrapper { text-align: center; padding: 32px 0 8px; }
+    .secure-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #666;
+      font-weight: 500;
+    }
+    .secure-badges span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── PROOF STRIP ── */
+    .proof-strip {
+      background: var(--green);
+      color: white;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .proof-strip p { font-size: 16px; font-weight: 600; }
+    .proof-nums {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .proof-num strong { display: block; font-size: 36px; font-weight: 900; line-height: 1; }
+    .proof-num span { font-size: 13px; opacity: .85; margin-top: 4px; display: block; }
+
+    /* ── TESTIMONIAL CAROUSEL ── */
+    .carousel-outer {
+      overflow: hidden;
+      width: 100%;
+      margin-top: 28px;
+    }
+    .carousel-row {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      margin-bottom: 12px;
+    }
+    .carousel-row:first-child { animation: scroll-left 22s linear infinite; }
+    .carousel-row:last-child  { animation: scroll-right 22s linear infinite; }
+    .carousel-row img {
+      height: 280px;
+      width: auto;
+      border-radius: 14px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    @media (max-width: 480px) {
+      .carousel-row img { height: 230px; }
+    }
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes scroll-right {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .carousel-outer:hover .carousel-row { animation-play-state: paused; }
+
+    /* ── SECTION HEADINGS ── */
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    h2.section-title {
+      font-size: clamp(26px, 6vw, 36px);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    h2.section-title span { color: var(--green); }
+    h2.section-title em { font-style: normal; text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 5px; }
+
+    /* ── AGITATION THOUGHTS ── */
+    .rumination-box {
+      background: #fff8f8;
+      border: 1.5px solid #ffd0d0;
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+    .thought {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+      background: white;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    }
+    .thought:last-child { margin-bottom: 0; }
+    .thought-icon { font-size: 24px; flex-shrink: 0; margin-top: 1px; }
+    .thought p { font-size: 16px; color: var(--text-secondary); line-height: 1.45; font-weight: 500; }
+
+    /* ── BRIDGE ── */
+    .bridge {
+      background: var(--green-bg);
+      border: 2px solid var(--green-border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      margin-top: 36px;
+    }
+    .bridge h3 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .bridge h3 span { color: var(--green); }
+    .bridge p { font-size: 17px; color: var(--text-secondary); }
+
+    /* ── ENTREGÁVEIS (card full-width) ── */
+    .deliverables-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+
+    .module-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    }
+    .module-card-bg {
+      background: linear-gradient(160deg, #0a3d1f 0%, #1a7a3c 100%);
+      padding: 20px 20px 0;
+      text-align: center;
+      position: relative;
+    }
+    .module-card-bg .module-num {
+      display: inline-block;
+      background: var(--yellow);
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .module-card-bg img {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 16px;
+      filter: drop-shadow(0 8px 28px rgba(0,0,0,.5));
+    }
+    .module-card-footer {
+      background: #071f10;
+      padding: 20px 22px;
+      text-align: left;
+    }
+    .module-card-footer h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .module-card-footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,.65);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .module-card-footer .val-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 5px 16px;
+      border-radius: 20px;
+    }
+
+    /* ── BONUSES (card full-width) ── */
+    .bonus-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+      margin-bottom: 16px;
+    }
+    .bonus-card-bg {
+      background: linear-gradient(160deg, #0d0d1a 0%, #1a1a3a 100%);
+      padding: 20px 20px 0;
+      text-align: center;
+    }
+    .bonus-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .bonus-badge.free-badge {
+      background: var(--green);
+    }
+    .bonus-card-bg img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 16px;
+      filter: drop-shadow(0 6px 20px rgba(0,0,0,.5));
+    }
+    .bonus-card-footer {
+      background: #06060f;
+      padding: 18px 20px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .bonus-card-footer h4 {
+      font-size: 16px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.3;
+      flex: 1;
+    }
+    .bonus-card-footer .free-tag {
+      background: var(--green);
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      padding: 8px 18px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── FOR WHO ── */
+    .for-who-list { margin-top: 20px; }
+    .for-who-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .for-who-item:last-child { border-bottom: none; }
+    .for-who-item .check { color: var(--green); font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── RECAP BOX ── */
+    .recap-box {
+      background: var(--gray-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    .recap-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 15px;
+    }
+    .recap-item:last-child { border-bottom: none; }
+    .recap-item .name { font-weight: 600; }
+    .recap-item .val { color: #888; text-decoration: line-through; font-size: 14px; white-space: nowrap; margin-left: 8px; }
+    .recap-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 0;
+      font-size: 18px;
+      font-weight: 900;
+      border-top: 2px solid var(--border);
+      margin-top: 8px;
+    }
+    .recap-total .total-val { color: #888; text-decoration: line-through; font-size: 20px; }
+
+    /* ── PRICE BOX ── */
+    .price-box {
+      background: #0f5c2e;
+      border-radius: 20px;
+      padding: 40px 28px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .price-box img.product-img {
+      max-width: 320px;
+      width: 100%;
+      display: block;
+      margin: 0 auto 28px;
+      border-radius: 12px;
+    }
+    .price-box .old-price {
+      font-size: 18px;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 4px;
+    }
+    .price-box .old-price s { font-size: 26px; color: rgba(255,255,255,.5); }
+    .price-box .new-price {
+      font-size: clamp(72px, 20vw, 96px);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -2px;
+    }
+    .price-box .new-price sup { font-size: 36px; vertical-align: super; letter-spacing: 0; }
+    .price-box .installments {
+      font-size: 16px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 32px;
+    }
+    .offer-expires {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 20px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      letter-spacing: .5px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .75; }
+    }
+    .btn-cta-yellow {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #ffe033, #f5c800);
+      color: #1a1a1a;
+      text-align: center;
+      text-decoration: none;
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 900;
+      padding: 22px 32px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(245,200,0,.5);
+      transition: transform .15s, box-shadow .15s;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    .btn-cta-yellow:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(245,200,0,.6); }
+    .btn-cta-yellow small { display: block; font-size: 13px; font-weight: 600; opacity: .8; margin-top: 5px; text-transform: none; }
+
+    /* ── TWO CHOICES ── */
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    @media (max-width: 480px) { .choices { grid-template-columns: 1fr; } }
+    .choice-card {
+      border-radius: 16px;
+      padding: 24px 20px;
+    }
+    .choice-no {
+      background: #fff5f5;
+      border: 2px solid #ffcdd2;
+    }
+    .choice-yes {
+      background: var(--green-bg);
+      border: 2px solid var(--green-border);
+    }
+    .choice-card .choice-label {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .choice-no .choice-label { color: var(--red); }
+    .choice-yes .choice-label { color: var(--green); }
+    .choice-card h4 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .choice-item .ico { flex-shrink: 0; font-size: 16px; }
+
+    /* ── AUTHORITY ── */
+    .authority {
+      background: var(--gray-bg);
+      border-radius: 20px;
+      padding: 36px 28px;
+      margin-top: 12px;
+    }
+    .authority-header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .authority-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--green);
+      flex-shrink: 0;
+    }
+    .authority-name { font-size: 22px; font-weight: 900; }
+    .authority-title { font-size: 14px; color: var(--green); font-weight: 700; margin-top: 4px; }
+    .authority p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
+
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.4;
+    }
+    .faq-q::after { content: '+'; font-size: 28px; color: var(--green); flex-shrink: 0; font-weight: 300; }
+    .faq-q.open::after { content: '−'; }
+    .faq-a {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-top: 14px;
+      display: none;
+    }
+    .faq-a.show { display: block; }
+
+    /* ── GUARANTEE ── */
+    .guarantee {
+      background: white;
+      border: 2px dashed var(--green);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .guarantee h3 { font-size: 24px; font-weight: 900; margin-bottom: 14px; }
+    .guarantee p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: #aaa;
+      text-align: center;
+      padding: 36px 20px;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 64px;
+    }
+    footer a { color: #aaa; }
+
+    /* ── DIVIDERS ── */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green-border), transparent);
+      margin: 52px 0;
+    }
+
+    /* ── HIGHLIGHT TEXT ── */
+    .highlight-box {
+      background: #fffde7;
+      border-left: 5px solid var(--yellow);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    /* ── SALADAS PREVIEW (showcase full-width) ── */
+    .saladas-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .salada-feature-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.14);
+    }
+    .salada-feature-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .salada-feature-info {
+      background: white;
+      padding: 18px 20px;
+      border-top: 4px solid var(--green);
+    }
+    .salada-feature-info h4 {
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .salada-feature-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .salada-badge {
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── SENSORY SECTION ── */
+    .sensory-photo {
+      width: 100%;
+      display: block;
+    }
+    .sensory-photo + .sensory-photo {
+      margin-top: 6px;
+    }
+
+    /* ── PROOF SECTION (dark) ── */
+    .proof-section {
+      background: #0a3d1f;
+      padding: 0 0 48px;
+      overflow: hidden;
+    }
+    .proof-header {
+      padding: 48px 20px 28px;
+    }
+    .proof-stars {
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .proof-rating-text {
+      font-size: 15px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 18px;
+    }
+    .proof-rating-text strong { color: #fff; }
+    .proof-headline {
+      font-size: clamp(26px, 6.5vw, 36px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .proof-headline span { color: var(--yellow); }
+    .proof-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,.6);
+      font-weight: 500;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: rgba(255,255,255,.07);
+      border-top: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      overflow: hidden;
+      padding: 10px 0;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 40px;
+      width: max-content;
+      animation: ticker-scroll 25s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-track span {
+      font-size: 13px;
+      color: rgba(255,255,255,.85);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .ticker-track strong { color: white; }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── PROOF CTA ── */
+    .proof-cta-wrap {
+      padding: 32px 20px 0;
+      text-align: center;
+    }
+    .proof-cta-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    /* ── E TEM MAIS ── */
+    .etemais {
+      text-align: center;
+      margin: 40px 0 8px;
+    }
+    .etemais strong {
+      display: inline-block;
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 900;
+      color: var(--green);
+      border-bottom: 4px solid var(--yellow);
+      padding-bottom: 4px;
+    }
+    .etemais p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* sticky bottom bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0f5c2e;
+      color: white;
+      z-index: 999;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
+    }
+    .sticky-bar .sticky-text { font-size: 14px; font-weight: 700; line-height: 1.3; }
+    .sticky-bar .sticky-price { font-size: 12px; opacity: .8; margin-top: 2px; }
+    .sticky-bar a {
+      background: var(--yellow);
+      color: var(--text);
+      font-weight: 900;
+      font-size: 15px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  🔒 Pagamento 100% Seguro &nbsp;·&nbsp; ✅ Acesso Imediato &nbsp;·&nbsp; Garantia de satisfação
+</div>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="wrap" style="text-align:center;">
+    <div class="hero-tag">Para quem quer comer saudável mas não tem tempo</div>
+    <h1>Copie meu método e <span>resolva todos os almoços da semana em 30 minutos</span> ainda hoje.</h1>
+    <h2>As <strong>60 receitas de saladas no pote</strong> que se conservam por 7 dias fresquinhas na geladeira. Prepare no domingo, coma saudável a semana toda, sem se preocupar com o que vai comer amanhã.</h2>
+  </div>
+
+  <!-- Food photo after headline — promise → visual desire → buy -->
+  <img
+    src="https://saladas.compraronline.digital/img/14-lcp.webp"
+    alt="Salada no pote apetitosa"
+    style="width:100%; display:block; margin:24px 0 0;"
+  />
+
+  <div class="wrap" style="text-align:center; padding-top:28px;">
+    <!-- Bullet pills -->
+    <div style="display:flex; flex-direction:column; gap:10px; max-width:400px; margin:0 auto 28px;">
+      <div style="background:white; border-radius:50px; padding:12px 20px; font-size:15px; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ Acesso imediato hoje mesmo</div>
+      <div style="background:white; border-radius:50px; padding:12px 20px; font-size:15px; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ Mesmo sem tempo e sem experiência</div>
+      <div style="background:white; border-radius:50px; padding:12px 20px; font-size:15px; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ 60 receitas variadas que duram 7 dias</div>
+    </div>
+
+    <!-- Product image -->
+    <img
+      src="tudao.png"
+      alt="Saladas no Pote: tudo que você vai receber"
+      class="hero-img"
+      style="margin:0 auto 24px; border-radius:16px;"
+    />
+
+    <!-- Price visible in first fold -->
+    <div style="margin-bottom:8px;">
+      <span style="font-size:16px; color:#999; font-weight:500;">De <s style="color:#ccc;">$49.00</s> &nbsp;→&nbsp; hoje apenas</span>
+    </div>
+    <div style="font-size:clamp(52px,15vw,72px); font-weight:900; color:var(--green); line-height:1; margin-bottom:4px; letter-spacing:-1px;">$6<span style="font-size:.55em;letter-spacing:0">.90</span></div>
+    <div style="font-size:13px; color:var(--text-secondary); margin-bottom:24px; font-weight:500;">pagamento único · acesso imediato</div>
+
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px;">
+      QUERO ACESSO AGORA POR $6.90
+      <small>Clique e receba tudo no seu e-mail imediatamente</small>
+    </a>
+    <div class="secure-badges" style="justify-content:center; margin-top:14px;">
+      <span>🔒 Compra segura</span>
+      <span>📲 Acesso imediato</span>
+      <span>↩️ Garantia de satisfação</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROOF STRIP ════ -->
+<div class="proof-strip">
+  <p>Veja o que nossas alunas estão dizendo:</p>
+  <div class="proof-nums">
+    <div class="proof-num">
+      <strong>60+</strong>
+      <span>Receitas prontas</span>
+    </div>
+    <div class="proof-num">
+      <strong>7 dias</strong>
+      <span>De conservação</span>
+    </div>
+    <div class="proof-num">
+      <strong>30 min</strong>
+      <span>Preparo semanal</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SOCIAL PROOF EARLY ════ -->
+<section class="proof-section">
+  <!-- Cabeçalho com fundo escuro -->
+  <div class="proof-header">
+    <div class="wrap" style="text-align:center;">
+      <div class="proof-stars">⭐⭐⭐⭐⭐</div>
+      <div class="proof-rating-text"><strong>4.9/5</strong> · mais de <strong>2.800 alunas</strong> avaliaram</div>
+      <h2 class="proof-headline">Olha só o que estão falando das<br><span>Saladas no Pote</span> 👇</h2>
+      <p class="proof-sub">Prints reais. Sem filtro. Sem edição. Resultado de verdade.</p>
+    </div>
+  </div>
+
+  <!-- Ticker de compras ao vivo -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>🟢 <strong>Valentina C.</strong> de Bogotá acabou de comprar</span>
+      <span>🟢 <strong>María F.</strong> de Ciudad de México acabou de comprar</span>
+      <span>🟢 <strong>Lucía M.</strong> de Buenos Aires acabou de comprar</span>
+      <span>🟢 <strong>Ana G.</strong> de Miami acabou de comprar</span>
+      <span>🟢 <strong>Carmen R.</strong> de Madrid acabou de comprar</span>
+      <span>🟢 <strong>Valeria T.</strong> de Lima acabou de comprar</span>
+      <span>🟢 <strong>Catalina V.</strong> de Santiago acabou de comprar</span>
+      <span>🟢 <strong>Sofía D.</strong> de Medellín acabou de comprar</span>
+      <span>🟢 <strong>Fernanda L.</strong> de Guadalajara acabou de comprar</span>
+      <span>🟢 <strong>Agustina P.</strong> de Córdoba acabou de comprar</span>
+      <span>🟢 <strong>Isabel N.</strong> de Barcelona acabou de comprar</span>
+      <span>🟢 <strong>Andrea S.</strong> de Cusco acabou de comprar</span>
+      <span>🟢 <strong>Francisca O.</strong> de Valparaíso acabou de comprar</span>
+      <span>🟢 <strong>Jessica M.</strong> de Los Angeles acabou de comprar</span>
+    </div>
+  </div>
+
+  <!-- Carrossel de depoimentos -->
+  <div class="carousel-outer" style="margin-top:0; padding:20px 0;">
+    <div class="carousel-row">
+      <img src="Gemini_Generated_Image_ei0qknei0qknei0q.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_iphmqiiphmqiiphm.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_ie5ekxie5ekxie5e.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_hbt3j2hbt3j2hbt3.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_xf3bnvxf3bnvxf3b.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_vbp8vjvbp8vjvbp8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_10_36.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_12_22.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_14_11.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_9kb87c9kb87c9kb8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_psb7jtpsb7jtpsb7.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_y4ujfcy4ujfcy4uj.png" alt="Depoimento" />
+      <!-- duplicadas para loop infinito -->
+      <img src="Gemini_Generated_Image_ei0qknei0qknei0q.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_iphmqiiphmqiiphm.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_ie5ekxie5ekxie5e.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_hbt3j2hbt3j2hbt3.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_xf3bnvxf3bnvxf3b.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_vbp8vjvbp8vjvbp8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_10_36.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_12_22.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_14_11.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_9kb87c9kb87c9kb8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_psb7jtpsb7jtpsb7.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_y4ujfcy4ujfcy4uj.png" alt="Depoimento" />
+    </div>
+    <div class="carousel-row">
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_9kb87c9kb87c9kb8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_psb7jtpsb7jtpsb7.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_y4ujfcy4ujfcy4uj.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_hbt3j2hbt3j2hbt3.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_xf3bnvxf3bnvxf3b.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_vbp8vjvbp8vjvbp8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_10_36.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_12_22.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_14_11.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_ei0qknei0qknei0q.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_iphmqiiphmqiiphm.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_ie5ekxie5ekxie5e.png" alt="Depoimento" />
+      <!-- duplicadas para loop infinito -->
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_9kb87c9kb87c9kb8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_psb7jtpsb7jtpsb7.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/Gemini_Generated_Image_y4ujfcy4ujfcy4uj.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_hbt3j2hbt3j2hbt3.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_xf3bnvxf3bnvxf3b.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_vbp8vjvbp8vjvbp8.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_10_36.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_12_22.png" alt="Depoimento" />
+      <img src="Novos depoimento adicionais primeiro s depoimentos/ChatGPT Image 21 de jun. de 2026, 14_14_11.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_ei0qknei0qknei0q.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_iphmqiiphmqiiphm.png" alt="Depoimento" />
+      <img src="Gemini_Generated_Image_ie5ekxie5ekxie5e.png" alt="Depoimento" />
+    </div>
+  </div>
+
+  <!-- CTA dentro da seção escura -->
+  <div class="proof-cta-wrap">
+    <p class="proof-cta-label">👆 Você pode ser a próxima</p>
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" style="max-width:460px; margin:0 auto; display:block;">
+      ✅ QUERO MEU ACESSO AGORA POR $6.90
+      <small>Acesso imediato · Garantia de satisfação · Pagamento Seguro</small>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ AGITATION ════ -->
+<section>
+  <div class="wrap">
+    <p class="section-label">Fala a verdade...</p>
+    <h2 class="section-title">Você <em>quer</em> comer saudável, mas sempre tem algo que atrapalha, não é?</h2>
+    <h3 style="font-size:17px; font-weight:600; color:var(--text-secondary); text-align:center; margin-bottom:8px; line-height:1.4;">
+      Por isso, toda vez que você tenta manter a salada na rotina, você pensa:
+    </h3>
+
+    <div class="rumination-box">
+      <div class="thought">
+        <div class="thought-icon">😮‍💨</div>
+        <p>"Lavar, cortar, temperar todo dia... não tenho tempo pra isso na correria."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">🗑️</div>
+        <p>"Compro os ingredientes e metade estraga antes de usar. Fico jogando dinheiro fora."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">😩</div>
+        <p>"Alface e tomate todo dia enjoa. Não sei o que mais colocar pra ficar gostoso."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">🍔</div>
+        <p>"Quando não tem nada pronto, acabo pedindo delivery. Acaba com a dieta e com a conta bancária."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">😕</div>
+        <p>"Às vezes como salada sem gosto nenhum só pra não fugir da dieta. É sofrido."</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:28px;">
+      Isso acontece porque você ainda não tem um método simples de preparar saladas que se conservam por dias e que sejam gostosas de verdade.
+    </div>
+
+    <div class="bridge">
+      <h3>E se você pudesse preparar <span>todas as saladas da semana em 30 minutos</span>, com receitas gostosas que duram 7 dias na geladeira?</h3>
+      <p style="margin-top:12px;">Isso mudaria sua rotina alimentar?</p>
+      <p style="font-size:20px; font-weight:900; color:var(--green); margin-top:12px;">Se sim, o <strong>Saladas no Pote + Molhos Irresistíveis</strong> é para você.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ WHAT YOU'LL RECEIVE ════ -->
+<section style="background:#f8faf8; padding-top:52px; padding-bottom:52px;">
+  <div class="wrap">
+    <p class="section-label">O que você vai receber</p>
+    <h2 class="section-title">Veja <em>tudo</em> que está dentro do <span>Saladas no Pote</span></h2>
+    <p style="text-align:center; font-size:16px; color:var(--text-secondary); margin:-12px 0 32px;">Cada módulo foi criado para eliminar uma dor específica da sua rotina alimentar</p>
+
+    <div class="deliverables-grid">
+
+      <!-- Módulo 1 -->
+      <div class="module-card">
+        <div class="module-card-bg">
+          <div class="module-num">📗 Módulo 1 de 3</div>
+          <img src="modulo-1.png" alt="60 Receitas de Saladas no Pote" />
+        </div>
+        <div class="module-card-footer">
+          <h3>60 Receitas de Saladas no Pote</h3>
+          <p>60 receitas completas e variadas: de simples até sofisticadas. Nunca mais vai faltar inspiração ou repetir a mesma salada chata.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <span class="val-badge">✅ Valor: $19.90</span>
+            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acesso imediato</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 2 -->
+      <div class="module-card">
+        <div class="module-card-bg">
+          <div class="module-num">📘 Módulo 2 de 3</div>
+          <img src="modulo-2.png" alt="Segredo das Camadas" />
+        </div>
+        <div class="module-card-footer">
+          <h3>O Segredo das Camadas: fresquinha por 7 dias</h3>
+          <p>O método exato de montagem que garante salada fresca, crocante e gostosa por até 7 dias na geladeira. Zero desperdício.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <span class="val-badge">✅ Valor: $14.90</span>
+            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acesso imediato</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 3 -->
+      <div class="module-card">
+        <div class="module-card-bg">
+          <div class="module-num">📙 Módulo 3 de 3</div>
+          <img src="modulo-3.png" alt="Molhos Irresistíveis" />
+        </div>
+        <div class="module-card-footer">
+          <h3>Molhos Irresistíveis Caseiros</h3>
+          <p>Cada receita acompanha seu molho exclusivo, caseiro, fácil e infinitamente mais gostoso que os industrializados. A salada que parece restaurante.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <span class="val-badge">✅ Valor: $14.90</span>
+            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acesso imediato</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /deliverables-grid -->
+
+    <!-- E TEM MAIS -->
+    <div class="etemais" style="margin-top:52px;">
+      <strong>🎁 E tem mais!</strong>
+      <p>Você também vai receber <strong>3 bônus exclusivos</strong> totalmente grátis:</p>
+    </div>
+
+    <!-- Bônus 1 -->
+    <div class="bonus-card">
+      <div class="bonus-card-bg">
+        <span class="bonus-badge">🎁 Bônus 1 · GRÁTIS</span>
+        <img src="bonus-1.png" alt="20 Smoothies Detox" style="margin-top:16px;" />
+      </div>
+      <div class="bonus-card-footer">
+        <div>
+          <h4>20 Smoothies Detox</h4>
+          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Complementa sua alimentação saudável</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
+          <span class="free-tag">GRÁTIS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bônus 2 -->
+    <div class="bonus-card">
+      <div class="bonus-card-bg">
+        <span class="bonus-badge">🎁 Bônus 2 · GRÁTIS</span>
+        <img src="bonus-2.png" alt="5 Shots Matinais" style="margin-top:16px;" />
+      </div>
+      <div class="bonus-card-footer">
+        <div>
+          <h4>5 Shots Matinais</h4>
+          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Aceleram o metabolismo em 1 minuto</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
+          <span class="free-tag">GRÁTIS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bônus 3 -->
+    <div class="bonus-card">
+      <div class="bonus-card-bg">
+        <span class="bonus-badge">🎁 Bônus 3 · GRÁTIS</span>
+        <img src="bonus-3.png" alt="15 Águas Saborizadas" style="margin-top:16px;" />
+      </div>
+      <div class="bonus-card-footer">
+        <div>
+          <h4>15 Águas Saborizadas</h4>
+          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Hidratação gostosa com frutas naturais</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
+          <span class="free-tag">GRÁTIS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA após todos os entregáveis -->
+    <div class="btn-wrapper" style="padding-top:36px;">
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta">
+        ✅ QUERO TUDO ISSO POR $6.90
+        <small>Acesso imediato a todos os módulos + 3 bônus grátis</small>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ SALADAS PREVIEW ════ -->
+<section style="padding-bottom:0;">
+  <div class="wrap">
+    <p class="section-label">Algumas receitas</p>
+    <h2 class="section-title">Conheça algumas das <span>60 saladas</span> que você vai aprender</h2>
+
+    <div class="saladas-showcase">
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/6.webp" alt="Salada Refrescante" />
+        <div class="salada-feature-info">
+          <h4>Salada Refrescante + Molho Cítrico</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 100 kcal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/7.webp" alt="Salada Caprese" />
+        <div class="salada-feature-info">
+          <h4>Salada Caprese</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 120 kcal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/9.webp" alt="Salada Caesar" />
+        <div class="salada-feature-info">
+          <h4>Salada Caesar + Molho Original</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 115 kcal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/14-box.webp" alt="Salada Big Mac" />
+        <div class="salada-feature-info">
+          <h4>Salada Big Mac + Molho Especial</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 180 kcal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/10.webp" alt="Salada Mediterrânea" />
+        <div class="salada-feature-info">
+          <h4>Salada Mediterrânea + Molho Agridoce</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 120 kcal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/11.webp" alt="Salada Toscana" />
+        <div class="salada-feature-info">
+          <h4>Salada Toscana + Molho Siciliano</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 130 kcal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="salada-feature-card">
+        <img src="https://saladas.compraronline.digital/img/design.webp" alt="Salada Rústica" />
+        <div class="salada-feature-info">
+          <h4>Salada Rústica + Mostarda e Mel</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 dias</span>
+            <span class="salada-badge">🔥 160 kcal</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:24px; font-size:15px; color:#888; font-weight:500;">+ mais 53 receitas incríveis esperando por você...</p>
+  </div>
+</section>
+
+<!-- ════ SENSORY SECTION ════ -->
+<section style="padding:0; overflow:hidden;">
+  <div style="text-align:center; padding:40px 20px 24px;">
+    <p class="section-label">Frescor no prato</p>
+    <h2 class="section-title">Frescor de restaurante.<br><span>Na sua casa. Em 30 minutos.</span></h2>
+  </div>
+  <img class="sensory-photo" src="https://saladas.compraronline.digital/img/3.webp" alt="Salada fresca" />
+  <img class="sensory-photo" src="https://saladas.compraronline.digital/img/1.webp" alt="Salada colorida" />
+  <img class="sensory-photo" src="https://saladas.compraronline.digital/img/4.webp" alt="Salada gourmet" />
+  <div style="padding:32px 20px 52px; text-align:center;">
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px; margin:0 auto;">
+      QUERO FAZER ESSAS RECEITAS
+      <small>Acesso imediato · Apenas $6.90 USD</small>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ FOR WHO ════ -->
+<section>
+  <div class="wrap">
+    <p class="section-label">Para quem é</p>
+    <h2 class="section-title">O <span>Saladas no Pote</span> é para você que:</h2>
+
+    <div class="for-who-list">
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Quer manter uma alimentação saudável, mas não tem tempo de preparar comida todo dia</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Cansa de fazer sempre a mesma salada de alface e tomate e quer variedade de verdade</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Já tentou montar uma rotina saudável mas acaba falhando porque não tem nada pronto</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Fica frustrada quando joga ingredientes fora por não usar a tempo</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Quer uma solução prática, barata e gostosa para ter salada saudável todos os dias</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Quer até usar as receitas para gerar renda extra vendendo saladas no pote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ RECAP + PRICE ════ -->
+<section id="price">
+  <div class="wrap">
+    <p class="section-label">Recapitulando</p>
+    <h2 class="section-title">Tudo que você vai receber no <span>Saladas no Pote</span></h2>
+
+    <div class="recap-box">
+      <div class="recap-item">
+        <span class="name">✅ 60 Receitas de Saladas no Pote</span>
+        <span class="val">$19.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">✅ Método das Camadas (7 dias fresquinho)</span>
+        <span class="val">$14.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">✅ Molhos Irresistíveis Caseiros</span>
+        <span class="val">$14.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">🎁 Bônus 1: 20 Smoothies Detox</span>
+        <span class="val">$9.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">🎁 Bônus 2: 5 Shots Matinais</span>
+        <span class="val">$9.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">🎁 Bônus 3: 15 Águas Saborizadas</span>
+        <span class="val">$9.90</span>
+      </div>
+      <div class="recap-total">
+        <span>Valor total:</span>
+        <span class="total-val">$79.40</span>
+      </div>
+      <div style="text-align:center; margin-top:16px; padding:14px 0; border-radius:10px; background:var(--green-bg);">
+        <span style="font-size:13px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:1px;">Você paga hoje</span><br>
+        <span style="font-size:clamp(40px,11vw,58px); font-weight:900; color:var(--green); line-height:1.1;">$6.90</span>
+        <span style="display:block; font-size:13px; color:var(--text-secondary); margin-top:4px; font-weight:500;">Economia de $72.50 (91% de desconto)</span>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <img src="tudao.png" alt="Saladas no Pote - Tudo que você vai receber" class="product-img" />
+
+      <span class="offer-expires">⏳ OFERTA POR TEMPO LIMITADO</span>
+
+      <p class="old-price">De <s>$49.00</s> hoje você leva tudo por:</p>
+      <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
+      <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
+
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow">
+        ✅ QUERO AGORA · ACESSAR POR $6.90
+        <small>Acesso imediato pelo e-mail · Garantia de satisfação</small>
+      </a>
+
+      <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pagamento 100% seguro · Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ TWO CHOICES ════ -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Agora você tem <span>duas opções</span></h2>
+
+    <div class="choices">
+      <div class="choice-card choice-no">
+        <div class="choice-label">❌ Opção 1</div>
+        <h4>Sem o Saladas no Pote</h4>
+        <div class="choice-item"><span class="ico">👉</span><span>Continuar sem tempo, preparando salada todo dia do zero</span></div>
+        <div class="choice-item"><span class="ico">👉</span><span>Jogar ingredientes fora e desperdiçar dinheiro</span></div>
+        <div class="choice-item"><span class="ico">👉</span><span>Comer sempre a mesma salada sem graça</span></div>
+        <div class="choice-item"><span class="ico">👉</span><span>Acabar pedindo delivery porque não tem nada pronto</span></div>
+      </div>
+
+      <div class="choice-card choice-yes">
+        <div class="choice-label">✅ Opção 2</div>
+        <h4>Com o Saladas no Pote</h4>
+        <div class="choice-item"><span class="ico">✅</span><span>Preparar tudo em 30 min no domingo e ter a semana resolvida</span></div>
+        <div class="choice-item"><span class="ico">✅</span><span>Zero desperdício, zero trabalho diário</span></div>
+        <div class="choice-item"><span class="ico">✅</span><span>60 receitas variadas e deliciosas toda semana</span></div>
+        <div class="choice-item"><span class="ico">✅</span><span>Alimentação saudável de verdade, sem esforço</span></div>
+      </div>
+    </div>
+
+    <p style="text-align:center; font-size:clamp(18px,4.5vw,22px); font-weight:800; margin-top:32px; line-height:1.4;">
+      Eu sei (e você também sabe):<br>a <span style="color:var(--green)">opção 2 é a mais inteligente.</span>
+    </p>
+
+    <div class="btn-wrapper">
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta">
+        ✅ QUERO A OPÇÃO 2 · POR $6.90
+        <small>Clique e tenha acesso imediato agora mesmo</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ AUTHORITY ════ -->
+<section>
+  <div class="wrap">
+    <p class="section-label">Quem criou</p>
+    <h2 class="section-title">A criadora do <span>Saladas no Pote</span> é <span>Priscila Prates</span></h2>
+
+    <div class="authority">
+      <div class="authority-header">
+        <img src="https://saladas.compraronline.digital/priscila-prates.webp" alt="Priscila Prates" class="authority-photo" />
+        <div>
+          <div class="authority-name">Priscila Prates</div>
+          <div class="authority-title">Nutricionista</div>
+        </div>
+      </div>
+      <p>As receitas de saladas no pote da Priscila sempre fizeram sucesso na internet: são práticas, deliciosas e funcionam de verdade para quem tem uma rotina corrida. Depois de ajudar milhares de pessoas a transformarem a relação com a alimentação saudável, ela reuniu as <strong>60 melhores receitas</strong> em um único material completo. Agora chegou a sua vez de ter acesso a esse método e nunca mais ficar sem opção saudável.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ MORE TESTIMONIALS ════ -->
+<section class="proof-section">
+  <div class="proof-header">
+    <div class="wrap" style="text-align:center;">
+      <div class="proof-stars">⭐⭐⭐⭐⭐</div>
+      <h2 class="proof-headline">As mensagens que <span>chegam todo dia</span> 💬</h2>
+      <p class="proof-sub">Resultados reais de pessoas reais, sem filtro, sem edição.</p>
+    </div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>⭐⭐⭐⭐⭐ <strong>Valentina (Bogotá):</strong> "Nunca mais joguei salada fora!"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>María (CDMX):</strong> "60 receitas incríveis, mudou minha semana"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Carmen (Madrid):</strong> "O método das camadas é genial!"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Jessica (Miami):</strong> "Melhor $6.90 que já gastei"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Lucía (Buenos Aires):</strong> "Minha família adorou os molhos"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Catalina (Santiago):</strong> "Preparo no domingo e curto a semana"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Valentina (Bogotá):</strong> "Nunca mais joguei salada fora!"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>María (CDMX):</strong> "60 receitas incríveis, mudou minha semana"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Carmen (Madrid):</strong> "O método das camadas é genial!"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Jessica (Miami):</strong> "Melhor $6.90 que já gastei"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Lucía (Buenos Aires):</strong> "Minha família adorou os molhos"</span>
+      <span>⭐⭐⭐⭐⭐ <strong>Catalina (Santiago):</strong> "Preparo no domingo e curto a semana"</span>
+    </div>
+  </div>
+
+  <div class="carousel-outer" style="margin-top:0; padding:20px 0;">
+    <div class="carousel-row">
+      <img src="Depoimentos final da página/1.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/2.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/3.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/4.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/5.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/6.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/7.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/8.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/9.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/10.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/11.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/12.png" alt="Depoimento" />
+      <!-- duplicadas para loop infinito -->
+      <img src="Depoimentos final da página/1.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/2.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/3.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/4.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/5.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/6.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/7.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/8.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/9.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/10.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/11.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/12.png" alt="Depoimento" />
+    </div>
+    <div class="carousel-row">
+      <img src="Depoimentos final da página/7.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/8.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/9.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/10.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/11.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/12.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/1.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/2.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/3.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/4.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/5.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/6.png" alt="Depoimento" />
+      <!-- duplicadas para loop infinito -->
+      <img src="Depoimentos final da página/7.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/8.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/9.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/10.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/11.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/12.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/1.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/2.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/3.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/4.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/5.png" alt="Depoimento" />
+      <img src="Depoimentos final da página/6.png" alt="Depoimento" />
+    </div>
+  </div>
+
+  <div class="proof-cta-wrap">
+    <p class="proof-cta-label">👆 Você pode ser a próxima. Acesse agora.</p>
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" style="max-width:460px; margin:0 auto; display:block;">
+      ✅ EU TAMBÉM QUERO ESSE RESULTADO
+      <small>Acesso imediato · Garantia de satisfação · Pagamento Seguro</small>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ GUARANTEE ════ -->
+<section>
+  <div class="wrap">
+    <div class="guarantee">
+      <img src="ChatGPT Image 18 de jun. de 2026, 23_43_52.png" alt="Garantia de Satisfação" style="width:180px; margin:0 auto 20px; display:block;" />
+      <h3>Faça uma receita.<br>Se não gostar, devolvemos tudo.</h3>
+      <p style="font-size:18px; font-weight:700; color:var(--green); margin-bottom:16px;">Essa é nossa garantia. E ela vale de verdade.</p>
+      <p>Acesse o material, escolha qualquer receita, prepare e experimente. Se a salada não ficar gostosa, se o molho não impressionar, se por qualquer razão você não ficar satisfeita é só nos avisar. Devolvemos <strong>100% do seu dinheiro</strong>, sem perguntas, sem burocracia, sem complicação.</p>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px; text-align:left;">
+        <div style="display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600;">
+          <span style="font-size:20px;">✅</span> Sem precisar explicar o motivo
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600;">
+          <span style="font-size:20px;">✅</span> Sem burocracia nem demora
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600;">
+          <span style="font-size:20px;">✅</span> 100% do valor de volta na sua conta
+        </div>
+      </div>
+      <p style="margin-top:20px; font-size:14px; color:#888; font-style:italic;">Temos essa confiança porque sabemos que quando você testar as receitas, vai querer fazer todas as 60.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ FAQ ════ -->
+<section>
+  <div class="wrap">
+    <p class="section-label">Dúvidas</p>
+    <h2 class="section-title">Perguntas <span>frequentes</span></h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Como recebo o acesso após a compra?</div>
+      <div class="faq-a">Assim que o pagamento for confirmado, você recebe um e-mail com acesso imediato a todas as 60 receitas de saladas, os molhos e todos os bônus. Sem espera, sem burocracia. Em dúvidas, entre em contato: contato@vidaboa.digital</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Preciso de potes especiais?</div>
+      <div class="faq-a">Não! Qualquer pote que você já tem em casa funciona: de plástico, de vidro, grande ou pequeno. O importante é que feche bem. Sem gastar dinheiro com equipamento extra.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Quanto tempo realmente dura a salada?</div>
+      <div class="faq-a">Quando montada corretamente com o método das camadas, a salada dura de 5 a 7 dias fresquinha na geladeira. Você prepara tudo no domingo e tem almoço ou jantar saudável pronto a semana toda.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">As receitas são fáceis de fazer?</div>
+      <div class="faq-a">Super fáceis! Todas têm instruções claras e passo a passo simples. Se você sabe picar, misturar e temperar, você consegue fazer. As receitas foram pensadas para quem tem rotina corrida.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Os ingredientes são difíceis de achar?</div>
+      <div class="faq-a">Não. Todas as receitas usam ingredientes simples que você encontra em qualquer supermercado ou feira. Nada de ingredientes exóticos ou caros.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Posso vender saladas no pote usando essas receitas?</div>
+      <div class="faq-a">Sim! Muitas alunas já estão gerando renda extra com as receitas. Dependendo da sua região, saladas no pote são vendidas entre $2 e $5 por unidade. É uma forma inteligente de transformar o conhecimento em lucro.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Qual é a forma de pagamento?</div>
+      <div class="faq-a">Você pode pagar com cartão de crédito ou débito internacional. O pagamento é 100% seguro.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FINAL CTA ════ -->
+<section style="padding-bottom:100px;">
+  <div class="wrap">
+    <div class="price-box">
+      <p style="font-size:clamp(20px,5vw,26px); font-weight:900; color:white; margin-bottom:20px; line-height:1.3;">Não perca mais tempo.<br>Transforme sua alimentação hoje.</p>
+      <span class="offer-expires">⏳ Oferta por tempo limitado</span>
+      <p class="old-price" style="margin-top:12px;">De <s>$49.00</s> hoje você leva tudo por:</p>
+      <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
+      <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow">
+        ✅ QUERO AGORA · ACESSAR POR $6.90
+        <small>Acesso imediato · Garantia de satisfação · Pagamento Seguro</small>
+      </a>
+      <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pagamento 100% seguro · Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <div>
+    <div class="sticky-text">Saladas no Pote + Molhos</div>
+    <div class="sticky-price">De $49 por apenas <strong>$6.90</strong></div>
+  </div>
+  <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10">COMPRAR AGORA</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p>Dúvidas? Entre em contato: <a href="mailto:contato@vidaboa.digital">contato@vidaboa.digital</a></p>
+    <p style="margin-top:12px;">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. A compra desse material não garante nenhum tipo de resultado. Os resultados apresentados são de clientes reais e podem variar.</p>
+    <p style="margin-top:12px;">© 2026 Saladas no Pote – Todos os Direitos Reservados</p>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      const isOpen = q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(el => {
+        el.classList.remove('open');
+        el.nextElementSibling.classList.remove('show');
+      });
+      if (!isOpen) {
+        q.classList.add('open');
+        answer.classList.add('show');
+      }
+    });
+  });
+
+  // Hide sticky bar when price section is visible
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      document.querySelector('.sticky-bar').style.display = e.isIntersecting ? 'none' : 'flex';
+    });
+  }, { threshold: 0.5 });
+  const priceSection = document.getElementById('price');
+  if (priceSection) observer.observe(priceSection);
+</script>
+
+</body>
+</html>
